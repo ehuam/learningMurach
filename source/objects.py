@@ -1,5 +1,5 @@
 class Product:
-    def __init__self(self, name ="", price =0.0, discountPercent = 0)
+    def __init__(self, name ="", price =0.0, discountPercent = 0):
         self.name = name
         self.price = price
         self.discountPercent = discountPercent
@@ -14,16 +14,16 @@ class Product:
         return self.name
 
 class Book(Product):
-    def __init__ (self, name = "", price = 0.0, discountPercent =0, author ="")
+    def __init__(self, name = "", price = 0.0, discountPercent =0, author =""):
         Product.__init__(self,name,price, discountPercent)
         self.author = author
 
     def getDescription(self):
-        return Product.getDescription(self) " by " + self.author
+        return Product.getDescription(self) + " by " + self.author
 
 class Movie(Product):
     def __init__(self, name ="", price = 0.0, discountPercent = 0, year = 0):
-        Product.__init__(sef, name, price, discountPercent)
+        Product.__init__(self, name, price, discountPercent)
         self.year = year
 
     def getDescription(self):
