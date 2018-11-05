@@ -12,6 +12,14 @@ class Product:
 
     def getDescription(self):
         return self.name
+    
+    # Over riding the __str__ () method of the object class so that when product is passed to the print() method, it returns
+    # name | price | discountPercent
+    def __str__(self):
+        return self.name + "|" + str(self.price) + "|" + str(self.discountPercent)
+
+    # def __str__(self):
+    #     return self.getDescription()
 
 class Book(Product):
     def __init__(self, name = "", price = 0.0, discountPercent =0, author =""):
