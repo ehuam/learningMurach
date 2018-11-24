@@ -13,18 +13,29 @@ class Product:
     def getDescription(self):
         return self.name
     
-class Book(Product):
-    def __init__(self, name="", price=0.0, discountPercent=0, author=""):
+class Media(Product):
+    def __init__(self, name='', price=0.0, discountPercent=0, format=''):
         Product.__init__(self, name, price, discountPercent)
+        self.format = format
+
+class Book(Media):
+    def __init__(self, name="", price=0.0, discountPercent=0, author="", format = "Paperback"):
+        Media.__init__(self, name, price, discountPercent, format)
         self.author = author
 
     def getDescription(self):
         return Product.getDescription(self) + " by " + self.author
                 
-class Movie(Product):
+class Movie(Media):
     def __init__(self, name="", price=0.0, discountPercent=0, year=0, format='DVD'):
-        Product.__init__(self, name, price, discountPercent)
+        Media.__init__(self, name, price, discountPercent, format)
         self.year = year
 
     def getDescription(self):
         return Product.getDescription(self) + " (" + str(self.year) + ")"
+
+class Album(Media):
+    def __init__(self, name='', price=0.0, discountPercent=0, artist = '', format = ''):
+        Media.__init__(self, name, price, discountPercent, format)
+        self.artist = artist
+
