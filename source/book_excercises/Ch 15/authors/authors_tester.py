@@ -18,7 +18,16 @@ def main():
 
     print("BOOK DATA - MUTLIPLE LINES")
     print("Title:   ", book.title)
-    print("Authors: ",  book.authors)
+
+    if book.authors.count == 1:
+        print("Author: ", book.authors)
+    else:
+        print("Authors: ",  book.authors)
+
+    print()
+    print("AUTHORS")
+    for i in authors:
+        print(i)
         
 if __name__ == "__main__":
     main()
