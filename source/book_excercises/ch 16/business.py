@@ -2,7 +2,7 @@ class Product:
     def __init__(self, name='', price =0.0, discountPercent = 0):
         self.name = name
         self.price = price
-        self.discountPercent - discountPercent
+        self.discountPercent = discountPercent
 
     def getDiscountAmount(self):
         discountAmount = self.price * (self.discountPercent / 100)
