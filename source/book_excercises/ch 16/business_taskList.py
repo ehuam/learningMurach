@@ -33,17 +33,27 @@ class TaskList:
     # def sortByComplete:
 
 class Task:
-    def __init__(self, dueDate=None, complete = False):
+    def __init__(self, name, dueDate, complete = False):
+
         try:
             if dueDate != None:
                 tuple_date = int(dueDate.split('/'))
                 date = datetime(month = tuple_date[0], day = tuple_date[1], year = tuple_date[2])
                 self.__dueDate = date
-            else:
-                self.__dueDate = None
         except TypeError as e:
-            println("You can't pass string types as a constructor. must be int")
-    
+            print("You can't pass string types as a constructor for date parameter. must be int")
+
+        self.__name = name
+        self.__dueDate = dueDate
         self.__complete = complete
 
-        
+    @property
+    def name(self):
+        return self.__name
+    
+    @name.setter
+    def name(self, name):
+        self.__name = name
+
+    def __str__(self):
+        print("Task name: {0}".format(self.name))
