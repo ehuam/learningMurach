@@ -1,7 +1,6 @@
 #!/usr/bin/env python 3
 
-from calendar import Calendar
-
+from datetime import datetime
 """
 This is the business tier for a Task List Program.
 The task list program can store one or more lists of tasks
@@ -13,10 +12,11 @@ We are going to need to work with calendar dates
 class TaskList:
     def __init__(self, name = "blank", task_count = 0):
         self.__name = name
-        self.__tasks = []
+        self.__tasks = dict()
+    
 
     def addTask(self, task):
-        self.__tasks.append(task)
+        self.__tasks[task.name] = task.content
 
     def removeTask(self, index):
         self.__tasks.pop(index)
@@ -26,4 +26,17 @@ class TaskList:
     # def sortByComplete:
 
 class Task:
-    def __init__(self, dueDate = )
+    def __init__(self, dueDate=None, complete = False):
+        try:
+            if dueDate != None:
+                tuple_date = int(dueDate.split('/'))
+                date = datetime(month = tuple_date[0], day = tuple_date[1], year = tuple_date[2])
+                self.__dueDate = date
+            else:
+                self.__dueDate = None
+        except TypeError as e:
+            println("You can't pass string types as a constructor. must be int")
+    
+        self.__complete = complete
+
+        
