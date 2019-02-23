@@ -58,3 +58,14 @@ class Task:
 
     def __str__(self):
         return ("Task name: {0} Due Date: {1} Complete: {2}".format(self.name, self.dueDate, self.__complete))
+
+class TaskScheduler:
+    def __init__(self):
+        self.__tasklists = []
+    
+    # def addList(self, item)
+
+    # def removeList(self, item)
+
+    # def sort(self, sortOn)
+        # return a string sorted by user request.
